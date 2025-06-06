@@ -20,10 +20,10 @@ export interface Recipe {
 export const recipes: Recipe[] = [
     {
         id: 0,
-        name: '테츠 카츠야의 V60 클래식 레시피',
-        totalTime: 240,
+        name: '테츠 카츠야의 4:6 레시피',
+        totalTime: 210,
         coffee: '20g',
-        water: '320ml',
+        water: '300ml',
         description:
             '일본의 유명 바리스타 테츠 카츠야가 개발한 클래식한 V60 레시피입니다. 균형잡힌 맛과 깔끔한 후미가 특징입니다.',
         image: '/api/placeholder/300/200',
