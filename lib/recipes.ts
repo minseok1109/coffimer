@@ -3,6 +3,7 @@ export interface RecipeStep {
     title: string;
     description: string;
     water: string;
+    totalWater?: number;
 }
 
 export interface Recipe {
@@ -28,34 +29,39 @@ export const recipes: Recipe[] = [
         image: '/api/placeholder/300/200',
         steps: [
             {
-                time: 30,
+                time: 45,
                 title: '블루밍',
                 description: '커피 가루에 물을 적셔 30초간 기다리세요',
-                water: '40ml',
+                water: '70ml',
+                totalWater: 70,
             },
             {
-                time: 60,
+                time: 90,
                 title: '1차 추출',
                 description: '천천히 원을 그리며 물을 부어주세요',
-                water: '100ml',
+                water: '50ml',
+                totalWater: 120,
             },
             {
-                time: 120,
+                time: 135,
                 title: '2차 추출',
                 description: '중앙에서 바깥쪽으로 물을 부어주세요',
-                water: '100ml',
+                water: '60ml',
+                totalWater: 180,
             },
             {
                 time: 180,
                 title: '3차 추출',
                 description: '마지막으로 남은 물을 부어주세요',
-                water: '80ml',
+                water: '60ml',
+                totalWater: 240,
             },
             {
-                time: 240,
+                time: 210,
                 title: '완료',
                 description: '드리핑이 완료될 때까지 기다리세요',
-                water: '0ml',
+                water: '60ml',
+                totalWater: 300,
             },
         ],
     },

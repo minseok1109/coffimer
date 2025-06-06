@@ -1,5 +1,6 @@
 'use client';
 
+import AppLogo from '@/app/_components/AppLogo';
 import { useRouter } from 'next/navigation';
 
 interface HeaderProps {
@@ -13,7 +14,7 @@ export default function Header({ onSettingsClick, onProfileClick }: HeaderProps)
     return (
         <header className="bg-white/80 backdrop-blur-sm border-b border-amber-100 px-6 py-4">
             <div className="flex items-center justify-between max-w-4xl mx-auto">
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-2">
                     <button
                         onClick={() => router.push('/')}
                         className="p-2 text-amber-700 hover:bg-amber-100 rounded-lg transition-colors"
@@ -32,22 +33,20 @@ export default function Header({ onSettingsClick, onProfileClick }: HeaderProps)
                             />
                         </svg>
                     </button>
-                    <div className="w-10 h-10 bg-gradient-to-br from-amber-600 to-orange-600 rounded-xl flex items-center justify-center">
-                        <span className="text-white text-lg">☕</span>
-                    </div>
+                    <AppLogo />
                     <h1 className="text-2xl font-bold text-amber-900">Coffimer</h1>
                 </div>
-                <NavigationButtons 
+                <NavigationButtons
                     onSettingsClick={onSettingsClick}
                     onProfileClick={onProfileClick}
                 />
             </div>
         </header>
     );
-}// 네비게이션 버튼 컴포넌트 (복잡한 조건부 렌더링을 분리)
-function NavigationButtons({ 
-    onSettingsClick, 
-    onProfileClick 
+} // 네비게이션 버튼 컴포넌트 (복잡한 조건부 렌더링을 분리)
+function NavigationButtons({
+    onSettingsClick,
+    onProfileClick,
 }: {
     onSettingsClick?: () => void;
     onProfileClick?: () => void;
@@ -58,12 +57,7 @@ function NavigationButtons({
                 onClick={onSettingsClick}
                 className="p-2 text-amber-700 hover:bg-amber-100 rounded-lg transition-colors"
             >
-                <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -82,12 +76,7 @@ function NavigationButtons({
                 onClick={onProfileClick}
                 className="p-2 text-amber-700 hover:bg-amber-100 rounded-lg transition-colors"
             >
-                <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                         strokeLinecap="round"
                         strokeLinejoin="round"

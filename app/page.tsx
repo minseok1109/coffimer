@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { getAllRecipes, Recipe } from '@/lib/recipes';
+import AppLogo from './_components/AppLogo';
 
 // Magic number를 명명된 상수로 분리
 const SECONDS_PER_MINUTE = 60;
@@ -12,9 +13,7 @@ function AppHeader() {
         <header className="bg-white/80 backdrop-blur-sm border-b border-amber-100 px-6 py-4">
             <div className="flex items-center justify-between max-w-7xl mx-auto">
                 <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-amber-600 to-orange-600 rounded-xl flex items-center justify-center">
-                        <span className="text-white text-lg">☕</span>
-                    </div>
+                    <AppLogo />
                     <h1 className="text-2xl font-bold text-amber-900">Coffimer</h1>
                 </div>
                 <HeaderActions />

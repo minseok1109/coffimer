@@ -4,8 +4,6 @@ import { useParams } from 'next/navigation';
 import { getRecipeById, getAllRecipes } from '@/lib/recipes';
 import { DEFAULT_RECIPE_INDEX } from './constants';
 import { useRecipeTimer } from './hooks/useRecipeTimer';
-
-// 컴포넌트 imports
 import Header from './components/Header';
 import RecipeInfo from './components/RecipeInfo';
 import TimerDisplay from './components/TimerDisplay';
