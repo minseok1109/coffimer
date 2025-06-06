@@ -10,10 +10,6 @@ interface TimerDisplayProps {
 
 export default function TimerDisplay({ currentTime, totalTime }: TimerDisplayProps) {
     const progress = calculateProgress(currentTime, totalTime);
-    const isCompleted = currentTime >= totalTime;
-    const progressText = isCompleted 
-        ? '완료!' 
-        : `${Math.floor(progress)}% 진행`;
 
     return (
         <div className="bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl p-8 mb-8">
@@ -22,7 +18,6 @@ export default function TimerDisplay({ currentTime, totalTime }: TimerDisplayPro
                     {formatTime(currentTime)}
                 </div>
                 <ProgressBar progress={progress} />
-                <div className="text-amber-700">{progressText}</div>
             </div>
         </div>
     );

@@ -37,19 +37,17 @@ export const useRecipeTimer = (recipe: Recipe): UseRecipeTimerReturn => {
                 // 단계 완료 체크 및 알림
                 const completedStep = recipe.steps?.find((step) => step.time === newTime);
                 if (completedStep) {
-                    sendNotification(
-                        `${completedStep.title} 완료!`,
-                        completedStep.description
-                    );
+                    sendNotification(`${completedStep.title} 완료!`, completedStep.description);
                 }
 
-                // 현재 단계 업데이트
-                const newStepIndex =
-                    recipe.steps?.findIndex((step) => newTime < step.time) ?? -1;
-                const newCurrentStep =
-                    newStepIndex === -1
-                        ? (recipe.steps?.length ?? 1) - 1
-                        : Math.max(0, newStepIndex - 1);
+                // 현재 단계 업데이트 (시간 구간 기반)
+                let newCurrentStep = 0;
+                if (recipe.steps) {
+                    // 현재 시간이 넘어간 단계들의 개수를 계산
+                    const passedSteps = recipe.steps.filter((step) => newTime > step.time).length;
+                    // 마지막 단계를 넘지 않도록 제한
+                    newCurrentStep = Math.min(passedSteps, recipe.steps.length - 1);
+                }
 
                 if (newCurrentStep !== currentStep) {
                     setCurrentStep(newCurrentStep);
