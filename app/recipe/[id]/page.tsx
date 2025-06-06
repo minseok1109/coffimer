@@ -260,7 +260,7 @@ export default function RecipeDetailPage() {
                             </span>
                         </div>
                         <h1 className="text-2xl font-bold text-amber-900" data-oid="048xmom">
-                            드립마스터
+                            Coffimer
                         </h1>
                     </div>
                     <div className="flex items-center space-x-4" data-oid="rjk8vh0">
