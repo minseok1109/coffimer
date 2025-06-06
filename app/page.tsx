@@ -246,39 +246,6 @@ export default function Page() {
             </header>
 
             <main className="max-w-4xl mx-auto px-6 py-8" data-oid="j3ebnw4">
-                {/* Recipe Selection */}
-                <div className="mb-8" data-oid="-kzceb_">
-                    <h2 className="text-xl font-semibold text-amber-900 mb-4" data-oid="c9sqio3">
-                        레시피 선택
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4" data-oid="si82b0q">
-                        {recipes.map((recipe, index) => (
-                            <button
-                                key={index}
-                                onClick={() => {
-                                    setSelectedRecipe(index);
-                                    setCurrentTime(recipe.totalTime);
-                                    setCurrentStep(0);
-                                    setIsRunning(false);
-                                }}
-                                className={`p-4 rounded-xl border-2 transition-all ${
-                                    selectedRecipe === index
-                                        ? 'border-amber-500 bg-amber-50'
-                                        : 'border-amber-200 bg-white hover:border-amber-300'
-                                }`}
-                                data-oid="li63wfc"
-                            >
-                                <h3
-                                    className="text-lg font-bold text-amber-900 text-center leading-relaxed"
-                                    data-oid="h0esy8b"
-                                >
-                                    {recipe.name}
-                                </h3>
-                            </button>
-                        ))}
-                    </div>
-                </div>
-
                 {/* Main Timer */}
                 <div className="bg-white rounded-3xl shadow-xl p-8 mb-8" data-oid="2vskbpj">
                     <div className="text-center mb-8" data-oid="k9k_:ju">
