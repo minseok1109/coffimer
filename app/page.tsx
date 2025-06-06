@@ -10,7 +10,7 @@ export default function Page() {
 
     const recipes = [
         {
-            name: 'V60 클래식',
+            name: '테츠 카츠야의 V60 클래식 레시피',
             totalTime: 240,
             difficulty: '초급',
             coffee: '20g',
@@ -49,7 +49,7 @@ export default function Page() {
             ],
         },
         {
-            name: '케멕스 골드',
+            name: '제임스 호프만의 케멕스 골드 레시피',
             totalTime: 360,
             difficulty: '중급',
             coffee: '30g',
@@ -88,7 +88,7 @@ export default function Page() {
             ],
         },
         {
-            name: '에어로프레스',
+            name: '팀 웬델보의 에어로프레스 레시피',
             totalTime: 180,
             difficulty: '초급',
             coffee: '17g',
@@ -269,23 +269,11 @@ export default function Page() {
                                 data-oid="li63wfc"
                             >
                                 <h3
-                                    className="font-semibold text-amber-900 mb-2"
+                                    className="text-lg font-bold text-amber-900 text-center leading-relaxed"
                                     data-oid="h0esy8b"
                                 >
                                     {recipe.name}
                                 </h3>
-                                <div
-                                    className="text-sm text-amber-600 space-y-1"
-                                    data-oid="br8raa_"
-                                >
-                                    <div data-oid="uifpl_6">
-                                        ⏱ {Math.floor(recipe.totalTime / 60)}분
-                                    </div>
-                                    <div data-oid="djf01cg">📊 {recipe.difficulty}</div>
-                                    <div data-oid="9wabo7h">
-                                        ☕ {recipe.coffee} / 💧 {recipe.water}
-                                    </div>
-                                </div>
                             </button>
                         ))}
                     </div>
