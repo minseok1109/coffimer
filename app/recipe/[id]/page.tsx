@@ -8,7 +8,7 @@ export default function RecipeDetailPage() {
     const router = useRouter();
     const recipeId = parseInt(params.id as string) || 0;
 
-    const [currentTime, setCurrentTime] = useState(240);
+    const [currentTime, setCurrentTime] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
     const [currentStep, setCurrentStep] = useState(0);
 
@@ -138,23 +138,47 @@ export default function RecipeDetailPage() {
     const currentRecipe = recipes[recipeId] || recipes[0];
 
     useEffect(() => {
-        setCurrentTime(currentRecipe.totalTime);
+        setCurrentTime(0);
         setCurrentStep(0);
         setIsRunning(false);
-    }, [recipeId, currentRecipe.totalTime]);
+    }, [recipeId]);
 
     useEffect(() => {
         let interval: NodeJS.Timeout;
-        if (isRunning && currentTime > 0) {
+        if (isRunning && currentTime < currentRecipe.totalTime) {
             interval = setInterval(() => {
                 setCurrentTime((time) => {
-                    const newTime = time - 1;
+                    const newTime = time + 1;
 
-                    // 단계 업데이트
-                    const elapsed = currentRecipe.totalTime - newTime;
-                    const newStep = currentRecipe.steps.findIndex((step) => elapsed <= step.time);
-                    if (newStep !== -1 && newStep !== currentStep) {
-                        setCurrentStep(newStep);
+                    // 단계 완료 체크 및 알림
+                    const completedStep = currentRecipe.steps.find((step) => step.time === newTime);
+                    if (completedStep) {
+                        // 브라우저 알림
+                        if (Notification.permission === 'granted') {
+                            new Notification(`${completedStep.title} 완료!`, {
+                                body: completedStep.description,
+                                icon: '/favicon.ico',
+                            });
+                        }
+
+                        // 사운드 알림 (선택사항)
+                        const audio = new Audio(
+                            'data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT',
+                        );
+                        audio.play().catch(() => {}); // 에러 무시
+                    }
+
+                    // 현재 단계 업데이트
+                    const newStepIndex = currentRecipe.steps.findIndex(
+                        (step) => newTime < step.time,
+                    );
+                    const newCurrentStep =
+                        newStepIndex === -1
+                            ? currentRecipe.steps.length - 1
+                            : Math.max(0, newStepIndex - 1);
+
+                    if (newCurrentStep !== currentStep) {
+                        setCurrentStep(newCurrentStep);
                     }
 
                     return newTime;
@@ -164,6 +188,13 @@ export default function RecipeDetailPage() {
         return () => clearInterval(interval);
     }, [isRunning, currentTime, currentRecipe, currentStep]);
 
+    // 알림 권한 요청
+    useEffect(() => {
+        if (Notification.permission === 'default') {
+            Notification.requestPermission();
+        }
+    }, []);
+
     const formatTime = (seconds: number) => {
         const mins = Math.floor(seconds / 60);
         const secs = seconds % 60;
@@ -171,11 +202,11 @@ export default function RecipeDetailPage() {
     };
 
     const getProgress = () => {
-        return ((currentRecipe.totalTime - currentTime) / currentRecipe.totalTime) * 100;
+        return (currentTime / currentRecipe.totalTime) * 100;
     };
 
     const resetTimer = () => {
-        setCurrentTime(currentRecipe.totalTime);
+        setCurrentTime(0);
         setIsRunning(false);
         setCurrentStep(0);
     };
@@ -325,7 +356,9 @@ export default function RecipeDetailPage() {
                                 ></div>
                             </div>
                             <div className="text-amber-700" data-oid="vtwddqo">
-                                {currentTime === 0 ? '완료!' : `${Math.floor(getProgress())}% 진행`}
+                                {currentTime >= currentRecipe.totalTime
+                                    ? '완료!'
+                                    : `${Math.floor(getProgress())}% 진행`}
                             </div>
                         </div>
                     </div>
@@ -387,10 +420,10 @@ export default function RecipeDetailPage() {
                             <div
                                 key={index}
                                 className={`flex items-center p-3 rounded-lg transition-colors ${
-                                    index === currentStep
-                                        ? 'bg-amber-100 border-l-4 border-amber-500'
-                                        : index < currentStep
-                                          ? 'bg-green-50 border-l-4 border-green-500'
+                                    currentTime >= step.time
+                                        ? 'bg-green-50 border-l-4 border-green-500'
+                                        : index === currentStep
+                                          ? 'bg-amber-100 border-l-4 border-amber-500'
                                           : 'bg-gray-50 border-l-4 border-gray-300'
                                 }`}
                                 data-oid="era8k5_"
