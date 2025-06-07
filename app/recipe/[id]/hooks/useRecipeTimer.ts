@@ -15,7 +15,7 @@ export const useRecipeTimer = (recipe: Recipe): UseRecipeTimerReturn => {
     const [currentTime, setCurrentTime] = useState(INITIAL_TIME);
     const [isRunning, setIsRunning] = useState(false);
     const [currentStep, setCurrentStep] = useState(INITIAL_STEP);
-    const { sendNotification } = useNotification();
+    const { sendNotification, initializeAudio } = useNotification();
 
     // 레시피 변경 시 초기화
     useEffect(() => {
@@ -64,8 +64,12 @@ export const useRecipeTimer = (recipe: Recipe): UseRecipeTimerReturn => {
     }, [isRunning, currentTime, recipe, currentStep]);
 
     const toggleTimer = useCallback(() => {
+        // 타이머 시작 시 오디오 초기화
+        if (!isRunning) {
+            initializeAudio();
+        }
         setIsRunning((prev) => !prev);
-    }, []);
+    }, [isRunning, initializeAudio]);
 
     const resetTimer = useCallback(() => {
         setCurrentTime(INITIAL_TIME);
