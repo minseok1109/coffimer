@@ -34,13 +34,16 @@ export default function RecipeDetailPage() {
             <main className="max-w-4xl mx-auto px-6 py-8">
                 {/* 메인 타이머 섹션 */}
                 <div className="bg-white rounded-3xl shadow-xl p-8 mb-8">
-                    <RecipeInfo recipe={currentRecipe} />
+                    <h2 className="text-3xl font-bold text-center text-amber-900 mb-2">
+                        {currentRecipe.name}
+                    </h2>
                     <TimerDisplay
                         currentTime={currentTime}
                         totalTime={currentRecipe.totalTime}
                         steps={currentRecipe.steps}
                         currentStepIndex={currentStep}
                     />
+                    <RecipeInfo recipe={currentRecipe} />
                     <TimerControls
                         isRunning={isRunning}
                         onToggle={toggleTimer}
