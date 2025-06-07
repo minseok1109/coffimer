@@ -24,26 +24,26 @@ export default function NextStep({ nextStep, nextStepIndex, totalSteps }: NextSt
 
     return (
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
-            <NextStepHeader 
-                title={nextStep.title} 
-                nextStepNumber={nextStepIndex + 1} 
-                totalSteps={totalSteps} 
+            <NextStepHeader
+                title={nextStep.title}
+                nextStepNumber={nextStepIndex + 1}
+                totalSteps={totalSteps}
             />
-            <NextStepContent 
-                description={nextStep.description} 
-                water={hasWater ? nextStep.water : undefined} 
+            <NextStepContent
+                description={nextStep.description}
+                water={hasWater ? nextStep.water : undefined}
             />
         </div>
     );
 }
 
-function NextStepHeader({ 
-    title, 
-    nextStepNumber, 
-    totalSteps 
-}: { 
-    title: string; 
-    nextStepNumber: number; 
+function NextStepHeader({
+    title,
+    nextStepNumber,
+    totalSteps,
+}: {
+    title: string;
+    nextStepNumber: number;
     totalSteps: number;
 }) {
     return (
@@ -58,11 +58,9 @@ function NextStepHeader({
 
 function NextStepContent({ description, water }: { description: string; water?: string }) {
     return (
-        <>
+        <div className="flex flex-col gap-2">
+            {water && <div className="text-lg text-blue-600">💧 {water}</div>}
             <p className="text-blue-700 mb-2">{description}</p>
-            {water && (
-                <div className="text-sm text-blue-600">💧 {water}</div>
-            )}
-        </>
+        </div>
     );
 }
