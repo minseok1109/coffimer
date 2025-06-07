@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Recipe } from '@/lib/recipes';
-// import { useNotification } from './useNotification';
+import { useNotification } from './useNotification';
 import { TIMER_INTERVAL_MS, INITIAL_TIME, INITIAL_STEP } from '../constants';
 
 interface UseRecipeTimerReturn {
@@ -15,6 +15,7 @@ export const useRecipeTimer = (recipe: Recipe): UseRecipeTimerReturn => {
     const [currentTime, setCurrentTime] = useState(INITIAL_TIME);
     const [isRunning, setIsRunning] = useState(false);
     const [currentStep, setCurrentStep] = useState(INITIAL_STEP);
+    const { sendNotification } = useNotification();
 
     // 레시피 변경 시 초기화
     useEffect(() => {
@@ -34,7 +35,13 @@ export const useRecipeTimer = (recipe: Recipe): UseRecipeTimerReturn => {
                 const newTime = prevTime + 1;
 
                 // 단계 완료 체크 및 알림
-                // const completedStep = recipe.steps?.find((step) => step.time === newTime);
+                const completedStep = recipe.steps?.find((step) => step.time === newTime);
+                if (completedStep) {
+                    sendNotification(
+                        `${completedStep.title} 완료`,
+                        `다음 단계를 진행하세요: ${completedStep.description}`
+                    );
+                }
 
                 // 현재 단계 업데이트 (시간 구간 기반)
                 let newCurrentStep = 0;
