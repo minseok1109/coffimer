@@ -16,6 +16,7 @@ export interface Recipe {
     dripper: string;
     description: string;
     image: string;
+    youtubeUrl?: string;
     steps?: RecipeStep[];
 }
 
@@ -31,6 +32,7 @@ export const recipes: Recipe[] = [
         description:
             '일본의 유명 바리스타 테츠 카츠야가 개발한 클래식한 V60 레시피입니다. 균형잡힌 맛과 깔끔한 후미가 특징입니다.',
         image: '/api/placeholder/300/200',
+        youtubeUrl: 'https://youtu.be/ewqza63GXh0?si=UKTU1rZFZF0y5ZXQ',
         steps: [
             {
                 time: 45,
@@ -80,6 +82,7 @@ export const recipes: Recipe[] = [
         description:
             '안스타님의 6888 레시피입니다. 굵은 분쇄도를 사용해서 향미를 표현한게 특징인 레시피입니다.',
         image: '/api/placeholder/300/200',
+        youtubeUrl: 'https://youtu.be/uZs78TPm7ws?si=FUqhmbGwAHV7DjdW',
         steps: [
             {
                 time: 30,
@@ -129,6 +132,7 @@ export const recipes: Recipe[] = [
         description:
             '정인성 바리스타의 대표 레시피로 40g-60g-60g-60g으로 분할 추출합니다. 약배전 스페셜티 원두의 맛과 향을 표현하는 데 적합합니다.',
         image: '/api/placeholder/300/200',
+        youtubeUrl: 'https://youtu.be/ewGLBdY6KOo?si=cmkTpc8TudPQlMNc',
         steps: [
             {
                 time: 30,
@@ -177,6 +181,7 @@ export const recipes: Recipe[] = [
         dripper: 'V60',
         description: '기존 4666 레시피의 개선 버전으로, 뜸들이기 시간을 늘려 안정성을 높였습니다.',
         image: '/api/placeholder/300/200',
+        youtubeUrl: 'https://youtu.be/i7Q-pvahrXw?si=5tcZ4azNWHNXFL8j',
         steps: [
             {
                 time: 40,
@@ -226,6 +231,7 @@ export const recipes: Recipe[] = [
         description:
             '아이스 커피를 위해 고안된 레시피. 마지막 물 양을 줄여 진한 원액을 추출한 뒤 얼음에 바로 부어 완성합니다.',
         image: '/api/placeholder/300/200',
+        youtubeUrl: 'https://youtu.be/i7Q-pvahrXw?si=5tcZ4azNWHNXFL8j',
         steps: [
             {
                 time: 40,
@@ -268,6 +274,7 @@ export const recipes: Recipe[] = [
         description:
             '커피 전문 유튜버 용챔의 약배전 원두 전용 레시피입니다. 굵고 빠른 물줄기로 시작하여 후반부에는 가늘고 느린 물줄기로 바꿔 산미와 다채로운 향을 균형 있게 추출합니다.',
         image: '/api/placeholder/300/200',
+        youtubeUrl: 'https://youtu.be/bFbMHE59T2I?si=8-3BkuNWoDZ9WmjB',
         steps: [
             {
                 time: 40,
@@ -295,62 +302,6 @@ export const recipes: Recipe[] = [
                 title: '3차 추출',
                 description: '가늘고 느린 물줄기로 중앙 위주로 부어 농도를 조절합니다.',
                 water: '50ml',
-                totalWater: 240,
-            },
-        ],
-    },
-    {
-        id: 6,
-        name: '용챔 강배전 레시피',
-        totalTime: 150,
-        coffee: '20g',
-        water: '240ml',
-        waterTemperature: '90°C',
-        dripper: 'V60',
-        description:
-            '용챔의 강배전 원두 전용 레시피입니다. 낮은 온도의 물과 가늘고 느린 물줄기를 사용하여 강배전 특유의 쓴맛과 잡미를 억제하고 단맛과 부드러운 질감을 극대화합니다.',
-        image: '/api/placeholder/300/200',
-        steps: [
-            {
-                time: 40,
-                title: '뜸들이기',
-                description: '40초 동안 뜸을 들입니다.',
-                water: '40ml',
-                totalWater: 40,
-            },
-            {
-                time: 65,
-                title: '1차 추출',
-                description: '가늘고 느린 물줄기로 조심스럽게 붓습니다.',
-                water: '50ml',
-                totalWater: 90,
-            },
-            {
-                time: 90,
-                title: '2차 추출',
-                description: '동일하게 가늘고 느린 물줄기를 유지합니다.',
-                water: '50ml',
-                totalWater: 140,
-            },
-            {
-                time: 110,
-                title: '3차 추출',
-                description: '물 양을 줄여 붓습니다.',
-                water: '30ml',
-                totalWater: 170,
-            },
-            {
-                time: 130,
-                title: '4차 추출',
-                description: '마지막 물을 붓고 추출을 마무리합니다.',
-                water: '30ml',
-                totalWater: 200,
-            },
-            {
-                time: 150,
-                title: '희석(바이패스)',
-                description: '추출된 원액에 40ml의 물을 추가하여 농도를 맞춥니다.',
-                water: '40ml',
                 totalWater: 240,
             },
         ],

@@ -11,6 +11,7 @@ import TimerControls from './components/TimerControls';
 import CurrentStep from './components/CurrentStep';
 import StepsOverview from './components/StepsOverview';
 import NextStep from './components/NextStep';
+import YoutubeVideo from './components/YoutubeVideo';
 
 export default function RecipeDetailPage() {
     const params = useParams();
@@ -70,6 +71,16 @@ export default function RecipeDetailPage() {
                         currentTime={currentTime}
                         currentStepIndex={currentStep}
                     />
+                )}
+
+                {/* 유튜브 영상 섹션 */}
+                {currentRecipe.youtubeUrl && (
+                    <div className="mt-8">
+                        <YoutubeVideo
+                            youtubeUrl={currentRecipe.youtubeUrl}
+                            title={currentRecipe.name}
+                        />
+                    </div>
                 )}
             </main>
         </div>
