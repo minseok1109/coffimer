@@ -8,31 +8,38 @@ interface CurrentStepProps {
     totalSteps: number;
 }
 
-export default function CurrentStep({ currentStep, currentStepIndex, totalSteps }: CurrentStepProps) {
+export default function CurrentStep({
+    currentStep,
+    currentStepIndex,
+    totalSteps,
+}: CurrentStepProps) {
     const title = currentStep?.title || '준비';
     const description = currentStep?.description || '시작 버튼을 눌러주세요';
     const hasWater = currentStep?.water && currentStep.water !== '0ml';
 
     return (
         <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6">
-            <StepHeader 
-                title={title} 
-                currentStepNumber={currentStepIndex + 1} 
-                totalSteps={totalSteps} 
+            <StepHeader
+                title={title}
+                currentStepNumber={currentStepIndex + 1}
+                totalSteps={totalSteps}
             />
-            <StepContent description={description} water={hasWater ? currentStep.water : undefined} />
+            <StepContent
+                description={description}
+                water={hasWater ? currentStep.water : undefined}
+            />
         </div>
     );
 }
 
 // 단계 헤더 컴포넌트
-function StepHeader({ 
-    title, 
-    currentStepNumber, 
-    totalSteps 
-}: { 
-    title: string; 
-    currentStepNumber: number; 
+function StepHeader({
+    title,
+    currentStepNumber,
+    totalSteps,
+}: {
+    title: string;
+    currentStepNumber: number;
     totalSteps: number;
 }) {
     return (
@@ -48,11 +55,9 @@ function StepHeader({
 // 단계 내용 컴포넌트
 function StepContent({ description, water }: { description: string; water?: string }) {
     return (
-        <>
+        <div className="flex flex-col gap-2">
+            {water && <div className="text-lg text-amber-600">💧 {water}</div>}
             <p className="text-amber-700 mb-2">{description}</p>
-            {water && (
-                <div className="text-sm text-amber-600">💧 {water}</div>
-            )}
-        </>
+        </div>
     );
 }

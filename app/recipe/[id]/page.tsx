@@ -10,6 +10,7 @@ import TimerDisplay from './components/TimerDisplay';
 import TimerControls from './components/TimerControls';
 import CurrentStep from './components/CurrentStep';
 import StepsOverview from './components/StepsOverview';
+import NextStep from './components/NextStep';
 
 export default function RecipeDetailPage() {
     const params = useParams();
@@ -45,11 +46,18 @@ export default function RecipeDetailPage() {
                         onToggle={toggleTimer}
                         onReset={resetTimer}
                     />
-                    <CurrentStep
-                        currentStep={currentStepData}
-                        currentStepIndex={currentStep}
-                        totalSteps={totalSteps}
-                    />
+                    <div className="flex flex-col gap-4">
+                        <CurrentStep
+                            currentStep={currentStepData}
+                            currentStepIndex={currentStep}
+                            totalSteps={totalSteps}
+                        />
+                        <NextStep
+                            nextStep={currentRecipe.steps?.[currentStep + 1]}
+                            nextStepIndex={currentStep + 1}
+                            totalSteps={totalSteps}
+                        />
+                    </div>
                 </div>
 
                 {/* 단계별 가이드 섹션 */}

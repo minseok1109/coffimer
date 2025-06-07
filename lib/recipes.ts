@@ -31,7 +31,7 @@ export const recipes: Recipe[] = [
             {
                 time: 45,
                 title: '블루밍',
-                description: '커피 가루에 물을 적셔 30초간 기다리세요',
+                description: '커피 가루에 물을 적셔 45초간 기다리세요',
                 water: '70ml',
                 totalWater: 70,
             },
@@ -52,14 +52,14 @@ export const recipes: Recipe[] = [
             {
                 time: 180,
                 title: '3차 추출',
-                description: '마지막으로 남은 물을 부어주세요',
+                description: '천천히 원을 그리며 물을 부어주세요',
                 water: '60ml',
                 totalWater: 240,
             },
             {
                 time: 210,
                 title: '완료',
-                description: '드리핑이 완료될 때까지 기다리세요',
+                description: '모든 물이 떨어질 때까지 기다리세요',
                 water: '60ml',
                 totalWater: 300,
             },
