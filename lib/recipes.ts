@@ -23,7 +23,7 @@ export interface Recipe {
 export const recipes: Recipe[] = [
     {
         id: 0,
-        name: '테츠 카츠야의 4:6 레시피',
+        name: '테츠 카츠야 4:6 레시피',
         totalTime: 210,
         coffee: '20g',
         water: '300ml',

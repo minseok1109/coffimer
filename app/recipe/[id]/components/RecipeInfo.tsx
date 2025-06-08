@@ -8,63 +8,23 @@ interface RecipeInfoProps {
 
 export default function RecipeInfo({ recipe }: RecipeInfoProps) {
     return (
-        <div className="text-center mb-8">
-            <RecipeDetails
-                coffee={recipe.coffee}
-                water={recipe.water}
-                waterTemperature={recipe.waterTemperature}
-                dripper={recipe.dripper}
-            />
-        </div>
-    );
-}
-
-// 레시피 세부 정보 컴포넌트
-function RecipeDetails({
-    coffee,
-    water,
-    waterTemperature,
-    dripper,
-}: {
-    coffee: string;
-    water: string;
-    waterTemperature: string;
-    dripper: string;
-}) {
-    return (
-        <div className="bg-amber-50 rounded-2xl p-4 max-w-2xl mx-auto border border-amber-100">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="text-center">
-                    <div className="bg-white rounded-xl p-4 shadow-sm border border-amber-50">
-                        <div className="text-xs font-medium text-amber-600 uppercase tracking-wide mb-2">
-                            커피
-                        </div>
-                        <div className="text-lg font-bold text-amber-900">{coffee}</div>
-                    </div>
+        <div className="bg-amber-50 rounded-xl p-3 border border-amber-100">
+            <div className="grid grid-cols-4 gap-2 text-center">
+                <div>
+                    <div className="text-xs text-amber-600 mb-1">커피</div>
+                    <div className="text-sm font-semibold text-amber-900">{recipe.coffee}</div>
                 </div>
-                <div className="text-center">
-                    <div className="bg-white rounded-xl p-4 shadow-sm border border-amber-50">
-                        <div className="text-xs font-medium text-amber-600 uppercase tracking-wide mb-2">
-                            물
-                        </div>
-                        <div className="text-lg font-bold text-amber-900">{water}</div>
-                    </div>
+                <div>
+                    <div className="text-xs text-amber-600 mb-1">물</div>
+                    <div className="text-sm font-semibold text-amber-900">{recipe.water}</div>
                 </div>
-                <div className="text-center">
-                    <div className="bg-white rounded-xl p-4 shadow-sm border border-amber-50">
-                        <div className="text-xs font-medium text-amber-600 uppercase tracking-wide mb-2">
-                            온도
-                        </div>
-                        <div className="text-lg font-bold text-amber-900">{waterTemperature}</div>
-                    </div>
+                <div>
+                    <div className="text-xs text-amber-600 mb-1">온도</div>
+                    <div className="text-sm font-semibold text-amber-900">{recipe.waterTemperature}</div>
                 </div>
-                <div className="text-center">
-                    <div className="bg-white rounded-xl p-4 shadow-sm border border-amber-50">
-                        <div className="text-xs font-medium text-amber-600 uppercase tracking-wide mb-2">
-                            드리퍼
-                        </div>
-                        <div className="text-lg font-bold text-amber-900">{dripper}</div>
-                    </div>
+                <div>
+                    <div className="text-xs text-amber-600 mb-1">드리퍼</div>
+                    <div className="text-sm font-semibold text-amber-900">{recipe.dripper}</div>
                 </div>
             </div>
         </div>

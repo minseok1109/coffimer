@@ -30,11 +30,6 @@ export default function YoutubeVideo({ youtubeUrl, title }: YoutubeVideoProps) {
         ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
         : `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
-    // 디버깅용 로그
-    console.log('YouTube URL:', youtubeUrl);
-    console.log('Video ID:', videoId);
-    console.log('Thumbnail URL:', thumbnailUrl);
-
     return (
         <div className="bg-white rounded-3xl shadow-xl p-8">
             <h3 className="text-2xl font-bold text-amber-900 mb-6 text-center">관련 영상</h3>

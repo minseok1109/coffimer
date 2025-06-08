@@ -38,7 +38,7 @@ function RecipeCard({ recipe, onRecipeClick }: RecipeCardProps) {
             onClick={() => onRecipeClick(recipe.id)}
             className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 overflow-hidden"
         >
-            <RecipeImage />
+            {/* <RecipeImage /> */}
             <RecipeContent recipe={recipe} formatTime={formatTime} />
         </div>
     );
@@ -63,7 +63,7 @@ function RecipeContent({ recipe, formatTime }: RecipeContentProps) {
     return (
         <div className="p-6">
             <h3 className="text-xl font-bold text-amber-900 mb-3 line-clamp-2">{recipe.name}</h3>
-            <p className="text-amber-700 text-sm mb-4 line-clamp-3">{recipe.description}</p>
+            <p className="text-amber-700 text-sm mb-4 line-clamp-3 break-keep">{recipe.description}</p>
             <RecipeInfo recipe={recipe} formatTime={formatTime} />
             <RecipeStartButton />
         </div>
