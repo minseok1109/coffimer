@@ -21,7 +21,7 @@ export default function TimerDisplay({
     const progress = calculateStepProgress(currentTime, steps, currentStepIndex);
 
     return (
-        <div className="bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl p-8 mb-8">
+        <div className="bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl p-8">
             <div className="text-center">
                 <div className="text-6xl font-mono font-bold text-amber-900 mb-4">
                     {formatTime(currentTime)}

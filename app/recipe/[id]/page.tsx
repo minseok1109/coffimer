@@ -30,38 +30,40 @@ export default function RecipeDetailPage() {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
-            <Header />
-
-            <main className="max-w-4xl mx-auto px-6 py-8">
+            <Header title={currentRecipe.name} />
+            <main className="max-w-4xl mx-auto px-4 py-6">
                 {/* 메인 타이머 섹션 */}
-                <div className="bg-white rounded-3xl shadow-xl p-8 mb-8">
-                    <h2 className="text-3xl font-bold text-center text-amber-900 mb-2">
-                        {currentRecipe.name}
-                    </h2>
+                <div className="bg-white rounded-3xl shadow-xl p-6 mb-6 flex flex-col gap-3">
                     <TimerDisplay
                         currentTime={currentTime}
                         totalTime={currentRecipe.totalTime}
                         steps={currentRecipe.steps}
                         currentStepIndex={currentStep}
                     />
-                    <RecipeInfo recipe={currentRecipe} />
                     <TimerControls
                         isRunning={isRunning}
                         onToggle={toggleTimer}
                         onReset={resetTimer}
                     />
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-3">
                         <CurrentStep
+                            recipe={currentRecipe}
                             currentStep={currentStepData}
                             currentStepIndex={currentStep}
                             totalSteps={totalSteps}
                         />
                         <NextStep
+                            recipe={currentRecipe}
                             nextStep={currentRecipe.steps?.[currentStep + 1]}
                             nextStepIndex={currentStep + 1}
                             totalSteps={totalSteps}
                         />
                     </div>
+                </div>
+
+                {/* 레시피 정보 섹션 */}
+                <div className="mb-4">
+                    <RecipeInfo recipe={currentRecipe} />
                 </div>
 
                 {/* 단계별 가이드 섹션 */}
@@ -75,7 +77,7 @@ export default function RecipeDetailPage() {
 
                 {/* 유튜브 영상 섹션 */}
                 {currentRecipe.youtubeUrl && (
-                    <div className="mt-8">
+                    <div className="mt-6">
                         <YoutubeVideo
                             youtubeUrl={currentRecipe.youtubeUrl}
                             title={currentRecipe.name}
