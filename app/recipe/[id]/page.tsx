@@ -45,27 +45,23 @@ export default function RecipeDetailPage() {
                         onToggle={toggleTimer}
                         onReset={resetTimer}
                     />
-                    <div className="flex flex-col gap-3">
-                        <CurrentStep
-                            recipe={currentRecipe}
-                            currentStep={currentStepData}
-                            currentStepIndex={currentStep}
-                            totalSteps={totalSteps}
-                        />
-                        <NextStep
-                            recipe={currentRecipe}
-                            nextStep={currentRecipe.steps?.[currentStep + 1]}
-                            nextStepIndex={currentStep + 1}
-                            totalSteps={totalSteps}
-                        />
-                    </div>
+                    <CurrentStep
+                        recipe={currentRecipe}
+                        currentStep={currentStepData}
+                        currentStepIndex={currentStep}
+                        totalSteps={totalSteps}
+                    />
+                    <NextStep
+                        recipe={currentRecipe}
+                        nextStep={currentRecipe.steps?.[currentStep + 1]}
+                        nextStepIndex={currentStep + 1}
+                        totalSteps={totalSteps}
+                    />
                 </div>
-
                 {/* 레시피 정보 섹션 */}
                 <div className="mb-4">
                     <RecipeInfo recipe={currentRecipe} />
                 </div>
-
                 {/* 단계별 가이드 섹션 */}
                 {currentRecipe.steps && (
                     <StepsOverview

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -58,7 +59,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                     }}
                 />
             </head>
-            <body className="">{children}</body>
+            <body className="">
+                <Script
+                    async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9663977910756699"
+                    crossOrigin="anonymous"
+                    strategy="afterInteractive"
+                />
+                {children}
+            </body>
         </html>
     );
 }
