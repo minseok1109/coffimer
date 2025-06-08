@@ -46,6 +46,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     return (
         <html lang="ko">
             <head>
+                <meta name="google-adsense-account" content="ca-pub-9663977910756699" />
                 <script
                     type="text/javascript"
                     dangerouslySetInnerHTML={{
