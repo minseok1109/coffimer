@@ -1,7 +1,6 @@
 'use client';
 
 import { RecipeStep } from '@/lib/recipes';
-import { formatTime } from '../utils/time';
 
 interface StepsOverviewProps {
     steps: RecipeStep[];
@@ -47,7 +46,6 @@ function StepItem({
         <div className={`flex items-center p-3 rounded-lg transition-colors ${stepStyle}`}>
             <StepNumber number={stepNumber} />
             <StepDetails step={step} />
-            <StepTime time={step.time} />
         </div>
     );
 }
@@ -80,11 +78,3 @@ function StepDetails({ step }: { step: RecipeStep }) {
     );
 }
 
-// 단계 시간 컴포넌트
-function StepTime({ time }: { time: number }) {
-    return (
-        <div className="text-sm text-amber-600">
-            {formatTime(time)}
-        </div>
-    );
-}

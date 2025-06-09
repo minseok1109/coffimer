@@ -8,7 +8,7 @@ interface TimerControlsProps {
 
 export default function TimerControls({ isRunning, onToggle, onReset }: TimerControlsProps) {
     return (
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center space-x-3">
             <StartPauseButton isRunning={isRunning} onClick={onToggle} />
             <ResetButton onClick={onReset} />
         </div>
@@ -26,7 +26,7 @@ function StartPauseButton({ isRunning, onClick }: { isRunning: boolean; onClick:
     return (
         <button
             onClick={onClick}
-            className={`px-8 py-4 rounded-full font-semibold text-white transition-all transform hover:scale-105 ${buttonStyles}`}
+            className={`px-6 py-3 rounded-full font-medium text-white transition-all transform hover:scale-105 ${buttonStyles}`}
         >
             {buttonText}
         </button>
@@ -38,7 +38,7 @@ function ResetButton({ onClick }: { onClick: () => void }) {
     return (
         <button
             onClick={onClick}
-            className="px-8 py-4 border-2 border-amber-600 text-amber-700 rounded-full font-semibold hover:bg-amber-50 transition-colors"
+            className="px-6 py-3 border-2 border-amber-600 text-amber-700 rounded-full font-medium hover:bg-amber-50 transition-colors"
         >
             리셋
         </button>
