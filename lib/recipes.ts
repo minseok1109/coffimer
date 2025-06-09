@@ -12,6 +12,8 @@ export interface Recipe {
     totalTime: number;
     coffee: string;
     water: string;
+    ratio: string;
+    filter?: string;
     waterTemperature: string;
     dripper: string;
     description: string;
@@ -29,6 +31,7 @@ export const recipes: Recipe[] = [
         water: '300ml',
         waterTemperature: '92°C',
         dripper: 'V60',
+        ratio: '1:15',
         description:
             '일본의 유명 바리스타 테츠 카츠야가 개발한 클래식한 V60 레시피입니다. 균형잡힌 맛과 깔끔한 후미가 특징입니다.',
         image: '/api/placeholder/300/200',
@@ -77,6 +80,7 @@ export const recipes: Recipe[] = [
         totalTime: 150,
         coffee: '20g',
         water: '300ml',
+        ratio: '1:15',
         waterTemperature: '94°C',
         dripper: 'V60',
         description:
@@ -127,6 +131,7 @@ export const recipes: Recipe[] = [
         totalTime: 140,
         coffee: '20g',
         water: '320ml',
+        ratio: '1:11',
         waterTemperature: '90°C',
         dripper: 'V60',
         description:
@@ -177,6 +182,7 @@ export const recipes: Recipe[] = [
         totalTime: 170,
         coffee: '18g',
         water: '300ml',
+        ratio: '1:16',
         waterTemperature: '90°C',
         dripper: 'V60',
         description: '기존 4666 레시피의 개선 버전으로, 뜸들이기 시간을 늘려 안정성을 높였습니다.',
@@ -226,6 +232,7 @@ export const recipes: Recipe[] = [
         totalTime: 170,
         coffee: '18g',
         water: '200ml',
+        ratio: '1:11',
         waterTemperature: '90°C',
         dripper: 'V60',
         description:
@@ -265,10 +272,48 @@ export const recipes: Recipe[] = [
     },
     {
         id: 5,
+        name: '정인성 아이스 드립 레시피',
+        totalTime: 140,
+        coffee: '15g',
+        water: '150ml',
+        ratio: '1:10',
+        waterTemperature: '95°C 이상',
+        dripper: 'V60 (모든 드리퍼 가능)',
+        description: '기본 1:10 비율로 진하게는 1:9, 연하게는 1:11 비율로 추출합니다.',
+        image: '/api/placeholder/300/200',
+        youtubeUrl: 'https://www.youtube.com/watch?v=x2ifNAQAET0',
+        steps: [
+            {
+                time: 45,
+                title: '뜸들이기',
+                description: '45초간 충분히 뜸을 들입니다.',
+                water: '50ml',
+                totalWater: 50,
+            },
+            {
+                time: 90,
+                title: '1차 추출',
+                description:
+                    '45초 동안 붓습니다. (1차 추출과 2차 추출 사이에 물이 다 빠져도 괜찮습니다)',
+                water: '50ml',
+                totalWater: 100,
+            },
+            {
+                time: 135,
+                title: '2차 추출',
+                description: '45초 동안 붓습니다. ',
+                water: '50ml',
+                totalWater: 150,
+            },
+        ],
+    },
+    {
+        id: 6,
         name: '용챔 약배전 레시피',
         totalTime: 140,
         coffee: '15g',
         water: '240ml',
+        ratio: '1:16',
         waterTemperature: '95°C',
         dripper: 'V60',
         description:
@@ -303,6 +348,213 @@ export const recipes: Recipe[] = [
                 description: '가늘고 느린 물줄기로 중앙 위주로 부어 농도를 조절합니다.',
                 water: '50ml',
                 totalWater: 240,
+            },
+        ],
+    },
+    {
+        id: 7,
+        name: '블랙로드 솔로 드리퍼 레시피',
+        totalTime: 150,
+        coffee: '12g',
+        water: '190ml',
+        ratio: '1:16',
+        waterTemperature: '95°C',
+        dripper: '솔로 드리퍼',
+        filter: '칼리타 웨이브 155',
+        description: `체코 브루어스컵 챔피언 "재키"의 솔로드리퍼 레시피
+        2025 월드 브루어스 챔피언 George Jinyang Peng도 솔로드리퍼로 우승했습니다.`,
+        image: '/api/placeholder/300/200',
+        steps: [
+            {
+                time: 30,
+                title: '뜸들이기',
+                description: '30초 동안 충분히 뜸을 들입니다.',
+                water: '40ml',
+                totalWater: 40,
+            },
+            {
+                time: 50,
+                title: '1차 추출',
+                description: '굵은 물줄기로 부어주세요.',
+                water: '50ml',
+                totalWater: 90,
+            },
+            {
+                time: 80,
+                title: '2차 추출',
+                description: '얇은 물줄기로 부어주세요.',
+                water: '50ml',
+                totalWater: 140,
+            },
+            {
+                time: 140,
+                title: '3차 추출',
+                description: '물이 다 빠질 때까지 기다리세요.',
+                water: '50ml',
+                totalWater: 190,
+            },
+        ],
+    },
+
+    {
+        id: 8,
+        name: '오리가미 핫 레시피 ver 1.0',
+        totalTime: 140,
+        coffee: '18g',
+        water: '270ml',
+        ratio: '1:15',
+        waterTemperature: '93-94°C',
+        dripper: '오리가미 에어 S',
+        filter: '칼리타 웨이브 185 필터',
+        description: `아이덴티티 커피랩 윤원균 대표의 오리가미 에어 핫 레시피입니다. 깔끔하면서도 단맛과 풍부한 향미를 표현하는 데 중점을 둡니다.`,
+        image: '/api/placeholder/300/200',
+        steps: [
+            {
+                time: 35,
+                title: '뜸들이기',
+                description: '40g의 물을 붓고 35초간 기다립니다.',
+                water: '40ml',
+                totalWater: 40,
+            },
+            {
+                time: 65,
+                title: '1차 추출',
+                description: '35초부터 150g이 될 때까지 물을 붓습니다.',
+                water: '110ml',
+                totalWater: 150,
+            },
+            {
+                time: 140,
+                title: '2차 추출 및 완료',
+                description:
+                    '물이 절반 정도 빠지면, 270g이 될 때까지 강한 물줄기로 붓고 추출을 완료합니다.',
+                water: '120ml',
+                totalWater: 270,
+            },
+        ],
+    },
+    {
+        id: 9,
+        name: '오리가미 아이스 브루잉 레시피',
+        totalTime: 125,
+        coffee: '20g',
+        water: '200ml',
+        ratio: '1:10',
+        waterTemperature: '92-95°C',
+        dripper: '오리가미 에어 S',
+        filter: '칼리타 웨이브 185 필터',
+        description: `아이덴티티 커피랩 윤원균 대표의 오리가미 에어 아이스 레시피입니다. 농축된 커피를 추출하여 얼음으로 희석해 청량하고 달콤한 맛을 냅니다. 서버에 얼음 약 95g을 미리 준비해주세요.`,
+        image: '/api/placeholder/300/200',
+        steps: [
+            {
+                time: 35,
+                title: '뜸들이기',
+                description: '40g의 물을 붓고 35초간 기다립니다.',
+                water: '40ml',
+                totalWater: 40,
+            },
+            {
+                time: 70,
+                title: '1차 추출',
+                description: '35초부터 110g이 될 때까지 물을 붓습니다.',
+                water: '70ml',
+                totalWater: 110,
+            },
+            {
+                time: 125,
+                title: '2차 추출 및 완료',
+                description:
+                    '물이 충분히 빠질 때까지 기다린 후, 200g이 될 때까지 붓고 추출을 완료합니다.',
+                water: '90ml',
+                totalWater: 200,
+            },
+        ],
+    },
+    {
+        id: 10,
+        name: '오리가미 콘 필터 핫 브루잉 레시피 (ver. 2)',
+        totalTime: 140,
+        coffee: '16g',
+        water: '260ml',
+        ratio: '1:16.25',
+        waterTemperature: '92°C',
+        dripper: '오리가미 에어 S',
+        filter: '오리가미 콘 필터',
+        description: `아이덴티티 커피랩의 오리가미 콘 필터 레시피입니다. 빠른 추출 속도를 활용해 미분을 컨트롤하고, 수위 조절을 통해 깔끔하고 쫀득한 질감과 복합적인 맛을 이끌어냅니다.`,
+        image: '/api/placeholder/300/200',
+        steps: [
+            {
+                time: 35,
+                title: '뜸들이기',
+                description: '40g의 물을 붓고 35초간 기다립니다.',
+                water: '40ml',
+                totalWater: 40,
+            },
+            {
+                time: 75,
+                title: '1차 추출',
+                description: '35초부터 140g이 될 때까지 안쪽에서 바깥쪽으로 원을 그리며 붓습니다.',
+                water: '100ml',
+                totalWater: 140,
+            },
+            {
+                time: 85,
+                title: '2차 추출',
+                description: '1분 15초에 바깥쪽에서 안쪽으로 200g까지 붓습니다.',
+                water: '60ml',
+                totalWater: 200,
+            },
+            {
+                time: 140,
+                title: '3차 추출 및 완료',
+                description:
+                    '1분 25초에 중앙에만 260g까지 부어주고, 총 추출 시간 2분 10초 ~ 2분 20초 사이에 완료합니다.',
+                water: '60ml',
+                totalWater: 260,
+            },
+        ],
+    },
+    {
+        id: 11,
+        name: '오리가미 콘 필터 아이스 브루잉 레시피 (ver. 2)',
+        totalTime: 130,
+        coffee: '19g',
+        water: '200ml',
+        ratio: '1:10.5',
+        waterTemperature: '92°C',
+        dripper: '오리가미 에어 S',
+        filter: '오리가미 콘 필터',
+        description: `아이덴티티 커피랩의 오리가미 콘 필터 아이스 레시피입니다. 핫 레시피보다 원두 양을 늘리고 분쇄도를 가늘게 하여 농축된 추출을 목표로 합니다. 서버에 얼음 8~10알을 미리 준비해주세요.`,
+        image: '/api/placeholder/300/200',
+        steps: [
+            {
+                time: 35,
+                title: '뜸들이기',
+                description: '40g의 물을 붓고 35초간 기다립니다.',
+                water: '40ml',
+                totalWater: 40,
+            },
+            {
+                time: 70,
+                title: '1차 추출',
+                description: '35초부터 가는 물줄기로 100g까지 붓습니다.',
+                water: '60ml',
+                totalWater: 100,
+            },
+            {
+                time: 100,
+                title: '2차 추출',
+                description: '1분 10초에 중간 물줄기로 150g까지 붓습니다.',
+                water: '50ml',
+                totalWater: 150,
+            },
+            {
+                time: 130,
+                title: '3차 추출 및 완료',
+                description:
+                    '물이 어느 정도 빠지면 중간 물줄기로 200g까지 붓고, 총 추출 시간 2분 10초 내외로 완료합니다.',
+                water: '50ml',
+                totalWater: 200,
             },
         ],
     },

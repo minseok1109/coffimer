@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -46,7 +45,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     return (
         <html lang="ko">
             <head>
-                <meta name="google-adsense-account" content="ca-pub-9663977910756699" />
                 <script
                     type="text/javascript"
                     dangerouslySetInnerHTML={{
@@ -60,15 +58,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                     }}
                 />
             </head>
-            <body className="">
-                <Script
-                    async
-                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9663977910756699"
-                    crossOrigin="anonymous"
-                    strategy="afterInteractive"
-                />
-                {children}
-            </body>
+            <body className="">{children}</body>
         </html>
     );
 }
