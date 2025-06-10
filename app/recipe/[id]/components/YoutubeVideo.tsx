@@ -71,9 +71,7 @@ export default function YoutubeVideo({ youtubeUrl, title }: YoutubeVideoProps) {
 
                     {/* 제목 */}
                     <div className="p-4 bg-gradient-to-t from-amber-50 to-white">
-                        <p className="text-center text-gray-700 font-medium">
-                            {title} 레시피 영상 보기
-                        </p>
+                        <p className="text-center text-gray-700 font-medium">{title} 영상 보기</p>
                     </div>
                 </div>
             </a>
