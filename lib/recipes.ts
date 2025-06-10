@@ -406,6 +406,7 @@ export const recipes: Recipe[] = [
         waterTemperature: '93-94°C',
         dripper: '오리가미 에어 S',
         filter: '칼리타 웨이브 185 필터',
+        youtubeUrl: 'https://www.youtube.com/watch?v=Ud0JGr_kMYE&t',
         description: `아이덴티티 커피랩 윤원균 대표의 오리가미 에어 핫 레시피입니다. 깔끔하면서도 단맛과 풍부한 향미를 표현하는 데 중점을 둡니다.`,
         image: '/api/placeholder/300/200',
         steps: [
@@ -443,6 +444,7 @@ export const recipes: Recipe[] = [
         waterTemperature: '92-95°C',
         dripper: '오리가미 에어 S',
         filter: '칼리타 웨이브 185 필터',
+        youtubeUrl: 'https://www.youtube.com/watch?v=Ud0JGr_kMYE&t',
         description: `아이덴티티 커피랩 윤원균 대표의 오리가미 에어 아이스 레시피입니다. 농축된 커피를 추출하여 얼음으로 희석해 청량하고 달콤한 맛을 냅니다. 서버에 얼음 약 95g을 미리 준비해주세요.`,
         image: '/api/placeholder/300/200',
         steps: [
@@ -480,6 +482,7 @@ export const recipes: Recipe[] = [
         waterTemperature: '92°C',
         dripper: '오리가미 에어 S',
         filter: '오리가미 콘 필터',
+        youtubeUrl: 'https://www.youtube.com/watch?v=k0YQ8vKRD4s',
         description: `아이덴티티 커피랩의 오리가미 콘 필터 레시피입니다. 빠른 추출 속도를 활용해 미분을 컨트롤하고, 수위 조절을 통해 깔끔하고 쫀득한 질감과 복합적인 맛을 이끌어냅니다.`,
         image: '/api/placeholder/300/200',
         steps: [
@@ -524,6 +527,7 @@ export const recipes: Recipe[] = [
         waterTemperature: '92°C',
         dripper: '오리가미 에어 S',
         filter: '오리가미 콘 필터',
+        youtubeUrl: 'https://www.youtube.com/watch?v=k0YQ8vKRD4s&t=774s',
         description: `아이덴티티 커피랩의 오리가미 콘 필터 아이스 레시피입니다. 핫 레시피보다 원두 양을 늘리고 분쇄도를 가늘게 하여 농축된 추출을 목표로 합니다. 서버에 얼음 8~10알을 미리 준비해주세요.`,
         image: '/api/placeholder/300/200',
         steps: [
@@ -568,8 +572,9 @@ export const recipes: Recipe[] = [
         waterTemperature: '94°C',
         dripper: '하리오 V60 (플라스틱 추천)',
         filter: '카펙 아바카 필터',
+        youtubeUrl: 'https://www.youtube.com/watch?v=Ly7hQEzH8lw',
         description:
-            '2014 월드 바리스타 챔피언 히데노리 이자키의 핫 커피 레시피입니다. 집에서도 쉽게 따라할 수 있도록 고안된 이 레시피는 21g의 원두를 사용하여 총 300ml를 3번에 나누어 추출합니다(60g-60g-180g). 특히 분쇄 전 원두에 물 한 방울을 섞어 정전기를 방지(RDT)하고, 로스팅 정도에 따라 분쇄도를 조절하는 것이 특징입니다.',
+            '2014 월드 바리스타 챔피언 히데 이자키의 핫 커피 레시피입니다. 집에서도 쉽게 따라할 수 있도록 고안된 이 레시피는 21g의 원두를 사용하여 총 300ml를 3번에 나누어 추출합니다(60g-60g-180g). 특히 분쇄 전 원두에 물 한 방울을 섞어 정전기를 방지(RDT)하고, 로스팅 정도에 따라 분쇄도를 조절하는 것이 특징입니다.',
         image: '/api/placeholder/300/200',
         steps: [
             {
@@ -608,8 +613,9 @@ export const recipes: Recipe[] = [
         waterTemperature: '94°C',
         dripper: '하리오 V60 (플라스틱 추천)',
         filter: '카펙 아바카 필터',
+        youtubeUrl: 'https://www.youtube.com/watch?v=Ly7hQEzH8lw',
         description:
-            '2014 월드 바리스타 챔피언 히데노리 이자키의 아이스 커피 레시피입니다. 1:10의 비율로 진하게 추출하여 얼음으로 희석하는 방식을 사용합니다. 핫 레시피보다 분쇄도를 굵게 조절하는 것이 특징입니다. 서버에 얼음 120g을 미리 준비해주세요.',
+            '2014 월드 바리스타 챔피언 히데 이자키의 아이스 커피 레시피입니다. 1:10의 비율로 진하게 추출하여 얼음으로 희석하는 방식을 사용합니다. 핫 레시피보다 분쇄도를 굵게 조절하는 것이 특징입니다. 서버에 얼음 120g을 미리 준비해주세요.',
         image: '/api/placeholder/300/200',
         steps: [
             {
@@ -646,6 +652,7 @@ export const recipes: Recipe[] = [
         waterTemperature: '91°C',
         dripper: '하리오 V60 (글라스)',
         filter: 'V60 종이 필터',
+        youtubeUrl: 'https://www.youtube.com/watch?v=9iul1LUdx6k&t=919s',
         description:
             '헤베커피의 2인분 브루잉 레시피입니다. 1인분 레시피의 2배가 아닌 1.5배의 원두(30g)를 사용하여 농축액을 추출한 뒤, 취향에 맞게 물이나 얼음으로 희석하여 두 잔을 만드는 방식입니다. 많은 양의 원두를 사용하기 때문에 91°C의 낮은 온도로 불필요한 성분 추출을 억제합니다. 따뜻하게 마실 경우, 추출된 커피에 50~70g의 물을 추가하고, 아이스로 마실 경우 얼음 잔에 바로 부어 즐길 수 있습니다.',
         image: '/api/placeholder/300/200',
