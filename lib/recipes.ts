@@ -558,6 +558,130 @@ export const recipes: Recipe[] = [
             },
         ],
     },
+    {
+        id: 12,
+        name: '히데 이자키 핫 V60 레시피',
+        totalTime: 210,
+        coffee: '21g',
+        water: '300ml',
+        ratio: '1:14.3',
+        waterTemperature: '94°C',
+        dripper: '하리오 V60 (플라스틱 추천)',
+        filter: '카펙 아바카 필터',
+        description:
+            '2014 월드 바리스타 챔피언 히데노리 이자키의 핫 커피 레시피입니다. 집에서도 쉽게 따라할 수 있도록 고안된 이 레시피는 21g의 원두를 사용하여 총 300ml를 3번에 나누어 추출합니다(60g-60g-180g). 특히 분쇄 전 원두에 물 한 방울을 섞어 정전기를 방지(RDT)하고, 로스팅 정도에 따라 분쇄도를 조절하는 것이 특징입니다.',
+        image: '/api/placeholder/300/200',
+        steps: [
+            {
+                time: 60,
+                title: '뜸들이기',
+                description:
+                    '가운데를 오목하게 만들고 60g의 물을 천천히 붓고 스월링한 후 1분간 기다립니다.',
+                water: '60ml',
+                totalWater: 60,
+            },
+            {
+                time: 120,
+                title: '1차 추출',
+                description:
+                    '1분이 되면 다시 60g의 물을 낙차가 크지 않게 부어 총 120g을 맞추고 1분간 더 기다립니다.',
+                water: '60ml',
+                totalWater: 120,
+            },
+            {
+                time: 210,
+                title: '2차 추출 및 완료',
+                description:
+                    '2분이 되면 나머지 180g의 물을 조금 더 높은 위치에서 부어줍니다. 총 추출 시간 3분~3분 30초 내외로 완료합니다.',
+                water: '180ml',
+                totalWater: 300,
+            },
+        ],
+    },
+    {
+        id: 13,
+        name: '히데 이자키 아이스 V60 레시피',
+        totalTime: 185,
+        coffee: '30g',
+        water: '180ml (+ 얼음 120g)',
+        ratio: '1:10',
+        waterTemperature: '94°C',
+        dripper: '하리오 V60 (플라스틱 추천)',
+        filter: '카펙 아바카 필터',
+        description:
+            '2014 월드 바리스타 챔피언 히데노리 이자키의 아이스 커피 레시피입니다. 1:10의 비율로 진하게 추출하여 얼음으로 희석하는 방식을 사용합니다. 핫 레시피보다 분쇄도를 굵게 조절하는 것이 특징입니다. 서버에 얼음 120g을 미리 준비해주세요.',
+        image: '/api/placeholder/300/200',
+        steps: [
+            {
+                time: 60,
+                title: '뜸들이기',
+                description: '60g의 물을 천천히 붓고 스월링한 후 1분간 기다립니다.',
+                water: '60ml',
+                totalWater: 60,
+            },
+            {
+                time: 120,
+                title: '1차 추출',
+                description: '1분이 되면 다시 60g의 물을 부어 총 120g을 맞춥니다.',
+                water: '60ml',
+                totalWater: 120,
+            },
+            {
+                time: 185,
+                title: '2차 추출 및 완료',
+                description:
+                    '2분이 되면 나머지 60g의 물을 조금 더 빠르게 부어줍니다. 총 추출 시간 3분 5초 내외로 완료하고 서버를 잘 흔들어줍니다.',
+                water: '60ml',
+                totalWater: 180,
+            },
+        ],
+    },
+    {
+        id: 14,
+        name: '헤베커피 2인분 브루잉 레시피',
+        totalTime: 175,
+        coffee: '30g',
+        water: '360ml (추출 후 희석)',
+        ratio: '1:12',
+        waterTemperature: '91°C',
+        dripper: '하리오 V60 (글라스)',
+        filter: 'V60 종이 필터',
+        description:
+            '헤베커피의 2인분 브루잉 레시피입니다. 1인분 레시피의 2배가 아닌 1.5배의 원두(30g)를 사용하여 농축액을 추출한 뒤, 취향에 맞게 물이나 얼음으로 희석하여 두 잔을 만드는 방식입니다. 많은 양의 원두를 사용하기 때문에 91°C의 낮은 온도로 불필요한 성분 추출을 억제합니다. 따뜻하게 마실 경우, 추출된 커피에 50~70g의 물을 추가하고, 아이스로 마실 경우 얼음 잔에 바로 부어 즐길 수 있습니다.',
+        image: '/api/placeholder/300/200',
+        steps: [
+            {
+                time: 50,
+                title: '뜸들이기',
+                description: '60g의 물을 붓고 50초간 기다립니다.',
+                water: '60ml',
+                totalWater: 60,
+            },
+            {
+                time: 80,
+                title: '1차 추출',
+                description: '50초부터 100g의 물을 부어 총 160g을 맞추고, 1분 20초까지 기다립니다.',
+                water: '100ml',
+                totalWater: 160,
+            },
+            {
+                time: 110,
+                title: '2차 추출',
+                description:
+                    '1분 20초부터 다시 100g의 물을 부어 총 260g을 맞추고, 1분 50초까지 기다립니다.',
+                water: '100ml',
+                totalWater: 260,
+            },
+            {
+                time: 175,
+                title: '3차 추출 및 완료',
+                description:
+                    '1분 50초부터 나머지 100g의 물을 부어 총 360g을 맞춥니다. 2분 50초에서 3분 사이에 추출을 완료합니다.',
+                water: '100ml',
+                totalWater: 360,
+            },
+        ],
+    },
 ];
 
 export const getRecipeById = (id: number): Recipe | undefined => {

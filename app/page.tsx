@@ -63,7 +63,7 @@ function RecipeContent({ recipe, formatTime }: RecipeContentProps) {
     return (
         <div className="p-6">
             <h3 className="text-xl font-bold text-amber-900 mb-3 line-clamp-2">{recipe.name}</h3>
-            <p className="text-amber-700 text-sm mb-4 line-clamp-3 break-keep">{recipe.description}</p>
+            <p className="text-amber-700 text-sm mb-4 break-keep">{recipe.description}</p>
             <RecipeInfo recipe={recipe} formatTime={formatTime} />
             <RecipeStartButton />
         </div>
