@@ -30,7 +30,7 @@ export default function Header({ title }: HeaderProps) {
                         />
                     </svg>
                 </button>
-                <h1 className="text-xl font-bold text-amber-900 break-keep">{title}</h1>
+                <h1 className="text-lg font-bold text-amber-900 px-12 text-center leading-tight truncate">{title}</h1>
             </div>
         </header>
     );
