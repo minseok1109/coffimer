@@ -8,7 +8,11 @@ interface StepsOverviewProps {
     currentStepIndex: number;
 }
 
-export default function StepsOverview({ steps, currentTime, currentStepIndex }: StepsOverviewProps) {
+export default function StepsOverview({
+    steps,
+    currentTime,
+    currentStepIndex,
+}: StepsOverviewProps) {
     return (
         <div className="bg-white rounded-2xl shadow-lg p-6">
             <h3 className="text-xl font-semibold text-amber-900 mb-4">단계별 가이드</h3>
@@ -28,24 +32,25 @@ export default function StepsOverview({ steps, currentTime, currentStepIndex }: 
 }
 
 // 개별 단계 아이템 컴포넌트
-function StepItem({ 
-    step, 
-    stepNumber, 
-    isCompleted, 
-    isCurrent 
-}: { 
-    step: RecipeStep; 
-    stepNumber: number; 
-    isCompleted: boolean; 
+function StepItem({
+    step,
+    stepNumber,
+    isCompleted,
+    isCurrent,
+}: {
+    step: RecipeStep;
+    stepNumber: number;
+    isCompleted: boolean;
     isCurrent: boolean;
 }) {
     // 단계별 스타일 결정
     const stepStyle = getStepStyle(isCompleted, isCurrent);
 
     return (
-        <div className={`flex items-center p-3 rounded-lg transition-colors ${stepStyle}`}>
+        <div className={`flex items-center w-full p-3 rounded-lg transition-colors ${stepStyle}`}>
             <StepNumber number={stepNumber} />
             <StepDetails step={step} />
+            <div className="text-sm text-amber-600">{step.water}</div>
         </div>
     );
 }
@@ -68,13 +73,12 @@ function StepNumber({ number }: { number: number }) {
             {number}
         </div>
     );
-}// 단계 세부 정보 컴포넌트
+} // 단계 세부 정보 컴포넌트
 function StepDetails({ step }: { step: RecipeStep }) {
     return (
-        <div className="flex-grow">
+        <div className="flex-1">
             <div className="font-medium text-amber-900">{step.title}</div>
             <div className="text-sm text-amber-600">{step.description}</div>
         </div>
     );
 }
-
