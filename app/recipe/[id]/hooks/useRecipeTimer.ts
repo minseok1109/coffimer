@@ -61,7 +61,7 @@ export const useRecipeTimer = (recipe: Recipe): UseRecipeTimerReturn => {
         }, TIMER_INTERVAL_MS);
 
         return () => clearInterval(interval);
-    }, [isRunning, currentTime, recipe, currentStep]);
+    }, [isRunning, currentTime, recipe, currentStep, sendNotification]);
 
     const toggleTimer = useCallback(() => {
         // 타이머 시작 시 오디오 초기화

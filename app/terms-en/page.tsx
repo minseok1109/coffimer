@@ -36,9 +36,9 @@ function TitleSection() {
             </p>
             <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
                 <p className="text-amber-800 text-sm">
-                    Thank you for using the Coffimer app ("Service"). These Terms of Service govern the use of the Coffimer mobile application provided by{' '}
+                    Thank you for using the Coffimer app (&quot;Service&quot;). These Terms of Service govern the use of the Coffimer mobile application provided by{' '}
                     {DEVELOPER_NAME}
-                    {' '}("we", "us", "developer").
+                    {' '}(&quot;we&quot;, &quot;us&quot;, &quot;developer&quot;).
                 </p>
             </div>
         </div>
@@ -180,7 +180,7 @@ export default function TermsPage() {
                         <p className="text-amber-800 mb-4">The following activities are prohibited:</p>
                         <ul className="list-disc list-inside space-y-2">
                             <ListItem>Reverse engineering, hacking, or security breaches of the Service</ListItem>
-                            <ListItem>Providing false information or stealing others' information</ListItem>
+                            <ListItem>Providing false information or stealing others&apos; information</ListItem>
                             <ListItem>Unauthorized commercial use</ListItem>
                             <ListItem>Activities that harm other users</ListItem>
                             <ListItem>Activities that violate laws and regulations</ListItem>
@@ -194,7 +194,7 @@ export default function TermsPage() {
                         <SubSectionTitle>4.1 Our Intellectual Property Rights</SubSectionTitle>
                         <ul className="list-disc list-inside space-y-2 mb-6">
                             <ListItem>
-                                All content in the Service is protected by our or our licensors' intellectual property rights
+                                All content in the Service is protected by our or our licensors&apos; intellectual property rights
                             </ListItem>
                             <ListItem>
                                 Users may use the Service only for personal, non-commercial purposes
@@ -248,7 +248,7 @@ export default function TermsPage() {
 
                         <SubSectionTitle>6.1 Limitations of Service Provision</SubSectionTitle>
                         <ul className="list-disc list-inside space-y-2 mb-6">
-                            <ListItem>The Service is provided "as is"</ListItem>
+                            <ListItem>The Service is provided &quot;as is&quot;</ListItem>
                             <ListItem>We do not guarantee the accuracy, completeness, or reliability of the Service</ListItem>
                             <ListItem>
                                 We are not responsible for service interruptions due to internet connection failures or device issues
