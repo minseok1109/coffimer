@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 // 상수 정의
-const PRIVACY_LAST_UPDATED = '2025년 1월 2일';
+const PRIVACY_LAST_UPDATED = '2025년 7월 3일';
 const DEVELOPER_NAME = 'Bang Minseok';
 const DEVELOPER_EMAIL = 'minseok32@gmail.com';
 const RESPONSE_TIME = '영업일 기준 48시간 이내';
