@@ -8,7 +8,7 @@ const APP_STORE_URL = 'https://apps.apple.com/kr/app/coffimer/id6747644924';
 
 export default function TopBanner() {
     const handleDownload = () => {
-        posthog.capture('my event', { property: 'value' });
+        posthog.capture('download_app_store');
         window.open(APP_STORE_URL, '_blank', 'noopener,noreferrer');
     };
 
