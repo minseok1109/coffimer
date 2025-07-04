@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { getAllRecipes, Recipe } from '@/lib/recipes';
 import AppLogo from './_components/AppLogo';
+import TopBanner from './_components/TopBanner';
 
 // Magic number를 명명된 상수로 분리
 const SECONDS_PER_MINUTE = 60;
@@ -125,6 +126,7 @@ export default function HomePage() {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+            <TopBanner />
             <AppHeader />
             <main className="max-w-7xl mx-auto px-6 py-8">
                 <RecipeGrid recipes={recipes} onRecipeClick={handleRecipeClick} />
