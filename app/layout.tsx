@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { PostHogProvider } from './_components/PostHogProvider';
 
 export const metadata: Metadata = {
     title: 'Coffimer',
@@ -68,7 +69,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                     }}
                 />
             </head>
-            <body className="">{children}</body>
+            <body className="">
+                <PostHogProvider>{children}</PostHogProvider>
+            </body>
         </html>
     );
 }
