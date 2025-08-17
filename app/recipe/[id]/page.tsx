@@ -1,8 +1,8 @@
 'use client';
 
-import { useParams } from 'next/navigation';
-import { getRecipeById, getAllRecipes } from '@/lib/recipes';
-import { DEFAULT_RECIPE_INDEX } from './constants';
+import { Suspense } from 'react';
+import { useParams, useRouter } from 'next/navigation';
+import { useRecipe } from '@/lib/hooks/useRecipes';
 import { useRecipeTimer } from './hooks/useRecipeTimer';
 import Header from './components/Header';
 import RecipeInfo from './components/RecipeInfo';
@@ -13,12 +13,27 @@ import StepsOverview from './components/StepsOverview';
 import NextStep from './components/NextStep';
 import YoutubeVideo from './components/YoutubeVideo';
 
-export default function RecipeDetailPage() {
-    const params = useParams();
-    const recipeId = parseInt(params.id as string) || DEFAULT_RECIPE_INDEX;
+// 로딩 스켈레톤 컴포넌트
+function RecipeDetailSkeleton() {
+    return (
+        <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+            <div className="bg-white/80 backdrop-blur-sm border-b border-amber-100 px-4 py-3">
+                <div className="h-8 bg-gray-200 rounded w-48 mx-auto animate-pulse" />
+            </div>
+            <main className="max-w-4xl mx-auto px-4 py-6">
+                <div className="bg-white rounded-3xl shadow-xl p-6 mb-6">
+                    <div className="h-32 bg-gray-200 rounded mb-4 animate-pulse" />
+                    <div className="h-16 bg-gray-200 rounded mb-4 animate-pulse" />
+                    <div className="h-24 bg-gray-200 rounded animate-pulse" />
+                </div>
+            </main>
+        </div>
+    );
+}
 
-    // 레시피 데이터 가져오기
-    const currentRecipe = getRecipeById(recipeId) || getAllRecipes()[DEFAULT_RECIPE_INDEX];
+// 레시피 상세 컴포넌트 (Suspense 내부에서 사용)
+function RecipeDetail({ recipeId }: { recipeId: string }) {
+    const { data: currentRecipe } = useRecipe(recipeId);
 
     // 타이머 훅 사용
     const { currentTime, isRunning, currentStep, toggleTimer, resetTimer } =
@@ -82,5 +97,16 @@ export default function RecipeDetailPage() {
                 )}
             </main>
         </div>
+    );
+}
+
+export default function RecipeDetailPage() {
+    const params = useParams();
+    const recipeId = params.id as string;
+
+    return (
+        <Suspense fallback={<RecipeDetailSkeleton />}>
+            <RecipeDetail recipeId={recipeId} />
+        </Suspense>
     );
 }

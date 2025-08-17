@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { PostHogProvider } from './_components/PostHogProvider';
 import { Analytics } from '@vercel/analytics/next';
+import { Providers } from './providers';
 export const metadata: Metadata = {
     title: 'Coffimer',
     description: '커피 추출 타이머 앱으로, 다양한 레시피를 따라 완벽한 커피를 추출해보세요.',
@@ -70,7 +71,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 />
             </head>
             <body className="">
-                <PostHogProvider>{children}</PostHogProvider>
+                <Providers>
+                    <PostHogProvider>{children}</PostHogProvider>
+                </Providers>
                 <Analytics />
             </body>
         </html>

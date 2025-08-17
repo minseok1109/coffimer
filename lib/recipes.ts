@@ -1,3 +1,6 @@
+// 이 파일은 타입 정의만 export하고 더 이상 사용되지 않습니다.
+// 실제 데이터는 Supabase에서 조회합니다.
+
 export interface RecipeStep {
     time: number;
     title: string;
@@ -7,7 +10,7 @@ export interface RecipeStep {
 }
 
 export interface Recipe {
-    id: number;
+    id: string;
     name: string;
     totalTime: number;
     coffee: string;
@@ -22,7 +25,9 @@ export interface Recipe {
     steps?: RecipeStep[];
 }
 
-export const recipes: Recipe[] = [
+// Deprecated: 하드코딩된 레시피 데이터는 더 이상 사용하지 않습니다.
+// 대신 useRecipes() 또는 useRecipe() hooks를 사용하세요.
+const recipes: Recipe[] = [
     {
         id: 0,
         name: '테츠 카츠야 4:6 레시피',
@@ -691,10 +696,12 @@ export const recipes: Recipe[] = [
     },
 ];
 
-export const getRecipeById = (id: number): Recipe | undefined => {
+// Deprecated: 아래 함수들은 더 이상 사용하지 않습니다.
+// 대신 useRecipes() 또는 useRecipe() hooks를 사용하세요.
+const getRecipeById = (id: number): Recipe | undefined => {
     return recipes.find((recipe) => recipe.id === id);
 };
 
-export const getAllRecipes = (): Recipe[] => {
+const getAllRecipes = (): Recipe[] => {
     return recipes;
 };

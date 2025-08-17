@@ -26,7 +26,7 @@ export const useRecipeTimer = (recipe: Recipe): UseRecipeTimerReturn => {
 
     // 타이머 로직
     useEffect(() => {
-        if (!isRunning || currentTime >= recipe.totalTime || !recipe.steps) {
+        if (!isRunning || !recipe || currentTime >= recipe.totalTime || !recipe.steps) {
             return;
         }
 
