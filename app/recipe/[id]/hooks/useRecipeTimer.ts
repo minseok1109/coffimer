@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Recipe } from '@/lib/recipes';
+import { Recipe } from '@/types/recipe.types';
 import { useNotification } from './useNotification';
 import { TIMER_INTERVAL_MS, INITIAL_TIME, INITIAL_STEP } from '../constants';
 

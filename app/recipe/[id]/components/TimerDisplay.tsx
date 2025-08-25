@@ -2,7 +2,7 @@
 
 import { formatTime, calculateStepProgress } from '../utils/time';
 import { PROGRESS_DECIMALS } from '../constants';
-import { RecipeStep } from '@/lib/recipes';
+import { RecipeStep } from '@/types/recipe.types';
 
 interface TimerDisplayProps {
     currentTime: number;

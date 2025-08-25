@@ -1,6 +1,6 @@
 'use client';
 
-import { RecipeStep } from '@/lib/recipes';
+import { RecipeStep } from '@/types/recipe.types';
 
 interface StepsOverviewProps {
     steps: RecipeStep[];

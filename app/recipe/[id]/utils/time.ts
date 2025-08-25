@@ -1,5 +1,5 @@
 import { TIME_PAD_LENGTH, TIME_PAD_CHARACTER } from '../constants';
-import { RecipeStep } from '@/lib/recipes';
+import { RecipeStep } from '@/types/recipe.types';
 
 export const formatTime = (seconds: number): string => {
     const mins = Math.floor(seconds / 60);

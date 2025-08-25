@@ -1,6 +1,6 @@
 'use client';
 
-import { Recipe, RecipeStep } from '@/lib/recipes';
+import { Recipe, RecipeStep } from '@/types/recipe.types';
 
 interface NextStepProps {
     recipe: Recipe;

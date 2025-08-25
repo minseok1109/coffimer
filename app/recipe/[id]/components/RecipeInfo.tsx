@@ -1,6 +1,6 @@
 'use client';
 
-import { Recipe } from '@/lib/recipes';
+import { Recipe } from '@/types/recipe.types';
 
 interface RecipeInfoProps {
     recipe: Recipe;

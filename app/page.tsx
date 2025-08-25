@@ -2,10 +2,11 @@
 
 import { Suspense } from 'react';
 import { useRouter } from 'next/navigation';
-import { Recipe } from '@/lib/recipes';
+
 import { useRecipes } from '@/lib/hooks/useRecipes';
 import AppLogo from './_components/AppLogo';
 import TopBanner from './_components/TopBanner';
+import { Recipe } from '@/types/recipe.types';
 
 // Magic number를 명명된 상수로 분리
 const SECONDS_PER_MINUTE = 60;
@@ -122,10 +123,7 @@ function RecipeLoadingSkeleton() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[...Array(6)].map((_, i) => (
-                <div
-                    key={i}
-                    className="bg-white rounded-2xl shadow-lg h-64 animate-pulse"
-                >
+                <div key={i} className="bg-white rounded-2xl shadow-lg h-64 animate-pulse">
                     <div className="h-32 bg-gray-200 rounded-t-2xl" />
                     <div className="p-4 space-y-3">
                         <div className="h-6 bg-gray-200 rounded w-3/4" />
