@@ -11,13 +11,13 @@ export async function GET() {
             .select('*')
             .is('deleted_at', null)
             .is('is_public', true)
-            .order('created_at', { ascending: false });
+            .order('created_at', { ascending: true });
 
         if (error) {
             console.error('Error fetching recipes:', error);
             return NextResponse.json<RecipesResponse>(
                 { recipes: [], error: 'Failed to fetch recipes' },
-                { status: 500 }
+                { status: 500 },
             );
         }
 
@@ -35,7 +35,7 @@ export async function GET() {
                     .order('step_index', { ascending: true });
 
                 return formatRecipe(recipe, steps || []);
-            })
+            }),
         );
 
         return NextResponse.json<RecipesResponse>({
@@ -45,7 +45,7 @@ export async function GET() {
         console.error('Unexpected error:', error);
         return NextResponse.json<RecipesResponse>(
             { recipes: [], error: 'Internal server error' },
-            { status: 500 }
+            { status: 500 },
         );
     }
 }
