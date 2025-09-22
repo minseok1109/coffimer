@@ -4,12 +4,13 @@ import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import posthog from 'posthog-js';
 
-const APP_STORE_URL = 'https://apps.apple.com/kr/app/coffimer/id6747644924';
+const LINK =
+    'https://docs.google.com/forms/d/e/1FAIpQLSfjQQ_8KFg-7zss0D2JZXK0-Imcc-Fzsv_9mOKpg-WLJzb38Q/viewform?usp=header';
 
 export default function TopBanner() {
     const handleDownload = () => {
-        posthog.capture('download_app_store');
-        window.open(APP_STORE_URL, '_blank', 'noopener,noreferrer');
+        posthog.capture('android_beta_banner_click');
+        window.open(LINK, '_blank', 'noopener,noreferrer');
     };
 
     return (
@@ -20,10 +21,10 @@ export default function TopBanner() {
                         <AppIcon />
                         <div className="flex-1 min-w-0">
                             <h2 className="text-sm sm:text-lg font-bold truncate">
-                                Coffimer 앱 스토어 출시!
+                                안드로이드 베타테스터 모집!
                             </h2>
                             <p className="text-xs sm:text-sm opacity-90 truncate">
-                                바로 다운로드하세요!
+                                많은 신청 부탁드립니다!
                             </p>
                         </div>
                     </div>
@@ -56,9 +57,7 @@ function DownloadButton({ onClick }: { onClick: () => void }) {
             className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 hover:scale-105 border border-white/30 flex-shrink-0"
             aria-label="App Store에서 Coffimer 앱 다운로드"
         >
-            <AppStoreBadge />
-            <span className="hidden sm:inline">App Store</span>
-            <span className="sm:hidden">다운로드</span>
+            <span>신청하기</span>
             <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
         </button>
     );
