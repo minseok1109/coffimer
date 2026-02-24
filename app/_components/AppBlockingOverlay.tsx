@@ -1,6 +1,6 @@
 const PLAY_STORE_LINK =
     'https://play.google.com/store/apps/details?id=com.bangbangminseok.coffimerapp&pcampaignid=web_share';
-const APP_STORE_LINK = '#'; // TODO: App Store 링크 추가
+const APP_STORE_LINK = 'https://apps.apple.com/app/coffimer/id6747644924';
 
 const FEATURES = [
     {
