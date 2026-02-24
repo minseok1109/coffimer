@@ -3,6 +3,7 @@ import './globals.css';
 import { PostHogProvider } from './_components/PostHogProvider';
 import { Analytics } from '@vercel/analytics/next';
 import { Providers } from '@/lib/providers';
+import { AppBlockingOverlay } from './_components/AppBlockingOverlay';
 export const metadata: Metadata = {
     title: 'Coffimer',
     description: '커피 추출 타이머 앱으로, 다양한 레시피를 따라 완벽한 커피를 추출해보세요.',
@@ -75,6 +76,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                     <PostHogProvider>{children}</PostHogProvider>
                 </Providers>
                 <Analytics />
+                <AppBlockingOverlay />
             </body>
         </html>
     );

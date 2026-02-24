@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 
 import { useRecipes } from '@/lib/hooks/useRecipes';
 import AppLogo from './_components/AppLogo';
-import { useAppLaunchModal } from '@/app/_components/useAppLaunchModal';
 import { Recipe } from '@/types/recipe.types';
 
 // Magic number를 명명된 상수로 분리
@@ -160,9 +159,6 @@ function RecipeList() {
 
 // 메인 HomePage 컴포넌트 - 단일 책임: 레이아웃과 데이터 관리
 export default function HomePage() {
-    // 앱 출시 모달 표시 (localStorage 기반 "오늘 하루 안보기" 지원)
-    useAppLaunchModal();
-
     return (
         <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
             <AppHeader />
